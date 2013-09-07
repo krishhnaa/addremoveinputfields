@@ -1,3 +1,3 @@
 addremoveinputfields
 ====================
-This sample project will allow you to add input fields dynamically using jquery.
+This sample project will allow you to add and remove input fields dynamically using jquery.
