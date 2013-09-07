@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Add/Remove Input Fields</title>
+</head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+     var maxInputs = 9;
+     var x = $("#InputsWrapper").length;
+     var Count = 1;
+     $('#AddMoreFileBox').click(function(e){
+       if(x <= maxInputs){
+       	Count++;
+       	$('#InputsWrapper').append('<div><input type="text" name="mytext[]" id="field_'+ Count +'" value="Text '+ Count +'"/><a href="#" class="removeclass">&times;</a></div>');
+       	x++;
+       }
+   return false;
+     });
+$("body").on("click",".removeclass", function(e){
+	if(x > 1){
+        $(this).parent('div').remove();
+        x--;
+        }
+        return false;
+  });
+	});
+
+
+</script>
+<body>
+    <button id="AddMoreFileBox" class="btn btn-info">ADD</button>
+	<div id="InputsWrapper">
+<div><input type="text" name="mytext[]" id="field_1" value="Text 1"><a href="#" class="removeclass">×</a></div>
+</div>
+</body>
+</html>	
